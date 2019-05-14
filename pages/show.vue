@@ -1,13 +1,13 @@
 <template>
+  <div v-html="name">
+  </div>
 </template>
 
 <script>
 export default {
   async asyncData(context) {
-    console.log('context.query');
-    console.log(context.query);
-    console.log('context.params');
-    console.log(context.params);
+    context.res.setHeader("X-XSS-Protection","0")
+    return { name: context.query.name };
   }
 };
 </script>
