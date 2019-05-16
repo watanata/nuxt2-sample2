@@ -6,7 +6,7 @@
 <script>
 export default {
   async asyncData(context) {
-    if(context.isServer) {
+    if(process.server) {
       context.res.setHeader("X-XSS-Protection","0")
     }
     return { name: context.query.name };
