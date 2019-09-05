@@ -1,4 +1,5 @@
 import pkg from './package'
+import bodyParser from 'body-parser'
 
 export default {
   mode: 'universal',
@@ -34,6 +35,10 @@ export default {
   */
   plugins: [
     {src: '~/plugins/vue-lazyload.js', ssr: false}
+  ],
+
+  serverMiddleware: [
+    bodyParser.urlencoded({ extended: false })
   ],
 
   /*
