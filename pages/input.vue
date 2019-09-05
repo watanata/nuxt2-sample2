@@ -10,10 +10,9 @@
 <script>
 export default {
   async asyncData(context) {
-    if(process.server) {
-      context.res.setHeader("X-XSS-Protection","0")
-    }
-    return { name: context.query.name };
+    console.log('hogehgoehgeohgeohgoeh')
+    context.res.setHeader("X-XSS-Protection","0")
+    return { name: context.params.name };
   }
 };
 </script>
