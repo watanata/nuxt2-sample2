@@ -1,5 +1,10 @@
 <template>
-  <div v-html="name">
+  <div>
+    <div v-html="name">
+    </div>
+    <div>
+      <p>このページはnameパラメータをそのままHTMLとして出力します</p>
+    </div>
   </div>
 </template>
 
