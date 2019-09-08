@@ -5,6 +5,10 @@
     <div>
       <p>このページはnameパラメータをそのままHTMLとして出力します</p>
     </div>
+    <div>
+      <p>対策："&lt;"と"&amp;"をエスケープする。</p>
+      <p>vue.jsの場合はv-htmlを使わない</p>
+    </div>
   </div>
 </template>
 
