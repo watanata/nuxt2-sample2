@@ -2,10 +2,10 @@
   <div>
     <div class="box">
       <div>
-        <input type="text" name="mail" v-bind:value="value" v-html="raw">
+        <input type="text" name="mail" v-bind:value="value">
       </div>
       <div>
-        <input type="text" name="sample" v-bind:value="value">
+        <input type="text" name="sample" v-bind:value="value2">
       </div>
       <div>
         <p>
@@ -20,11 +20,15 @@
       <div>
         <a v-bind:href="link">リンク</a>
         <p>ユーザーからの入力をそのままhref属性に適用するとjavascriptを実行可能</p>
+        <p>対策はリンク先のホストをサーバー側で限定することとスキームをhttps, httpに限定することも有効</p>
+      </div>
+      <div>
+        <a v-if="link.match(/^https?/)" v-bind:href="link">リンク</a>
+        <p>対策：aタグに対してv-if="link.match(/^https?/)" でプロトコルを限定</p>
       </div>
       <div>
         <nuxt-link v-bind:to="link">nuxt-linkで生成したリンク</nuxt-link>
-        <p>相対URLを作成するためjavascript式は実行されない</br>
-        また、リンク先のホストをサーバー側で限定することとスキームをhttps, httpに限定することも有効</p>
+        <p>相対URLを作成するためjavascript式は実行されない</p>
       </div>
     </div>
   </div>
@@ -39,6 +43,7 @@ export default {
     }
     return {
       value: context.query.value,
+      value2: context.query.value2,
       link: context.query.link,
       raw: context.query.raw
     };

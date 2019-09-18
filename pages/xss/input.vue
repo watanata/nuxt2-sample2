@@ -10,6 +10,12 @@
       上記のInput要素にはvalueに直接ユーザーの入力を展開するため要素を書き換えられる脆弱性があります。</br>
       しかし、Vue.jsのv-htmlではinnerHTMLしか書き換えることができないためinput要素の子要素として外部からタグが注入される。
     </div>
+    <div>
+      <p>対策版：粗大ごみ受付 v-bindを使う</p>
+      <form action="" method="POST">
+        氏名 <input v-bind:name="name">
+      </form>
+    </div>
   </div>
 </template>
 
