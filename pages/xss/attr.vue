@@ -51,8 +51,8 @@ export default {
 <style>
 
 body {
-  font-size: 16px;
   font-family: sans-serif;
+  background-color: #f7fafa;
 }
 
 input {
@@ -73,5 +73,6 @@ input {
   border: solid 1px #999;
   border-top: solid 7px #ed6103;
   border-radius: 5px;
+  background-color: #ffff;
 }
 </style>
